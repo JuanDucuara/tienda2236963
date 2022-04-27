@@ -23,3 +23,92 @@ Route::get('hola :)', function(){
     
     echo "<h1>hola le dijo la araña a la mosca </h1>";
  });
+
+ Route::get('paises' , function(){
+});
+    
+Route::get('paises' , function(){
+        $paises = [
+        "Colombia"  => [
+         "capital" => "Bogota",
+         "moneda" => "peso",
+         "poblacion" => "51.6",
+         "ciudades" => [
+             "Medellin",
+             "Cali",
+             "Barranquilla"
+            ]
+        
+        ],
+
+        "Ecuador" => [
+            "capital" => "Quito",
+            "moneda" => "Dolar",
+            "poblacion" => "30",
+            "ciudades" => [
+                "Guayaquil",
+                "Cuenca"
+               ]
+     
+        ],
+        
+        "Francia"  => [
+            "capital" => "Paris",
+            "moneda" => "Euro",
+            "poblacion" => "67.3",
+            "ciudades" => [
+                "Marsella",
+                "Lyon",
+                "Paris",
+                "Niza"
+              
+            ]
+     
+        ],
+
+        "Canada"  => [
+            "capital" => "Ottawwa",
+            "moneda" => "Dolar canadiense",
+            "poblacion" => "38.1",
+            "ciudades" => [
+                "Torontol",
+                "Montreal",
+                "Vancuver"
+               ]
+     
+        ],
+        
+        "China"  => [
+            "capital" => "Beigin",
+            "moneda" => "Reminbi",
+            "poblacion" => "1.401",
+            "ciudades" => [
+                "Shangai",
+                "Pekin",
+                "Wuhan",
+                "Canton",
+                "Shenzhen"
+            ]
+     
+        ],
+
+        "Estados Unidos"  => [
+            "capital" => "Washington D.C",
+            "moneda" => "Dolar",
+            "poblacion" => "329.5",
+            "ciudades" => [
+                "Los Angeles",
+                "Chicago",
+                "New York",
+                "San Francisco",
+                "Boston"
+               ]
+     
+        ]
+
+    ];
+
+    return view('paises')
+       ->with('paises' , $paises);
+
+ });
