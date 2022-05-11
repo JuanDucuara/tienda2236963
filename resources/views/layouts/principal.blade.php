@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href= "{{ asset('materialize/css/materialize.css') }}" >
->
     <title></title>
 </head>
 <body>
-<nav>
+<nav class="blue-grey">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">LaTiendaPhP</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="badges.html">Productos</a></li>
+        <li><a href="collapsible.html">Pedidos</a></li>
       </ul>
     </div>
   </nav>
+  <div class="container">
   @yield('contenido')
+  </div>
+  <script src="{{asset('materialize/js/materialize.js')}}"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+         var instances = M.FormSelect.init(elems, []);
+      });
+  </script>
 </body>
 </html>
