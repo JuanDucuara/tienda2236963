@@ -22,6 +22,7 @@ class ProductoController extends Controller
         $productos = Producto::all();
         //mostrar la vista del catalogo
         return view('productos.index')->with('productos',$productos);
+    }
 
     /**
      * Show the form for creating a new resource.
