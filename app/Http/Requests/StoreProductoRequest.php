@@ -26,10 +26,11 @@ class StoreProductoRequest extends FormRequest
         return [
               //1.Establecer reglas de validacion
          
-             "nombre" => 'required|alpha',
+             "nombre" => 'required|alpha|unique:productos,nombre',
              "descripcion"=>'required|max:250',
              "precio"=>'required|numeric|max:10000',
              "categoria"=>'required',
+             'imagen'=>'required|image|unique:productos,imagen',
              "Marca"=>'required'
             
         ];
@@ -42,7 +43,9 @@ class StoreProductoRequest extends FormRequest
        return [
             'required'=>'Dato obligatorio',
             'alpha' =>'Deben ser solo letras',
-            'max'=>'Maximo :max caracteres'
+            'max'=>'Maximo :max caracteres',
+            'unique'=>'Este campo ya existe en la db',
+            'image'=>'Solo archivos tipo imagen'
         ];
     }
 }
